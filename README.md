@@ -49,6 +49,16 @@ infrastructure details have been removed.
   regions cannot be recovered. Intermittent files may retain plaintext gaps,
   but recovery is partial and must be validated.
 
+## Delivery and spread
+
+The sample is not self-propagating. It has no worm logic, network scanner,
+credential brute force, exploit payload, or C2 beacon. It is a payload that
+must be delivered and executed by an external actor after a separate service
+compromise.
+
+See [docs/delivery-and-infection.md](docs/delivery-and-infection.md) for the
+sanitized delivery path, execution timeline, and system impact.
+
 ## Quick triage
 
 Run these on a suspected host before changing or deleting anything:
@@ -76,6 +86,7 @@ file. See [docs/recovery.md](docs/recovery.md).
 ```text
 README.md                     This overview
 docs/analysis.md              Static behavior and execution flow
+docs/delivery-and-infection.md  Delivery path, infection timeline, impact
 docs/encryption-format.md     Footer, KDF, KEM, and region format
 docs/detection.md             Hunting and detection guidance
 docs/recovery.md              Safe recovery decision tree

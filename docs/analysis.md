@@ -11,6 +11,12 @@ This document describes the observed build. Other builds or variants may
 differ in paths, thresholds, process lists, or note text. Treat every indicator
 as a hunting lead, not a guarantee.
 
+## Delivery
+
+The binary does not deliver or propagate itself. It must be staged and executed
+by an external actor. See [delivery-and-infection.md](delivery-and-infection.md)
+for the sanitized delivery path and its separation from the locker's behavior.
+
 ## Identity
 
 - Internal module and package naming uses `encfile`.
