@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Local analysis output and sensitive artifacts
+*.locked
+README_DECRYPT.txt
+encfile.keys.txt
+HOW_TO_DECRYPT.txt
+recovered_*
+server_incident_archive_*
+*.tar.gz
+*.log
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

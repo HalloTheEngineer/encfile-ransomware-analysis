@@ -1,0 +1,30 @@
+# encfile filesystem indicators
+# Comment lines are not paths. Correlate; several entries are generic.
+
+# High-confidence run-state artifacts
+/var/tmp/.X11-lock-session
+/var/tmp/.X11-lock-session.run
+
+# Per-directory ransom note
+README_DECRYPT.txt
+
+# Successful encryption rename
+*.locked
+
+# Names skipped by the locker; weak indicators on their own
+encfile.keys.txt
+HOW_TO_DECRYPT.txt
+README.txt
+
+# Default discovery roots
+/home
+/var/lib
+/var/www
+/opt
+/srv
+/mnt/*
+/media/*
+
+# Footer structure
+ENCH
+ENCF

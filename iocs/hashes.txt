@@ -1,0 +1,10 @@
+# encfile sample identifiers
+# Static analysis only; sample binary is not included.
+
+sample_sha256 = a8bfba3c98cc0bf2c6af42e1d17e8d34f5a010509c93fe95daf518a663e2112d
+sample_build_id = DMxrfknI4YYxMXGiraOX/ebhea_EiXmH1EXNFTqHU/9gcXc7fb_w6bb2Fcmm9_/VswE3-7ZRLy2QP3OzAvD
+sample_format = ELF64 x86-64, Go
+sample_go_version = go1.22.12
+sample_main_package = encfile/cmd/lock
+embedded_rsa_spki_der_sha256 = 2378bf45bb54fb2defc460063c9b43e09870741b62692b7f6acbc3cd7898bb38
+embedded_rsa_spki_pem_sha256 = 9d3c31e6c3859d7ede46d79efd6d78dd04b4932e3b547ac3ac6200aa7b50c26f

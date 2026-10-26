@@ -1,0 +1,35 @@
+title: Encfile Process Termination and Self-Delete Behavior
+id: 6f5f9f8e-3b8f-4f1d-9f0e-1a2b3c4d5e6f
+status: experimental
+description: Detects killall against database services or a delayed shell self-delete associated with the observed encfile build.
+author: encfile-public-analysis contributors
+date: 2026/10/26
+tags:
+  - attack.impact
+  - attack.t1486
+  - attack.t1070.004
+logsource:
+  product: linux
+  category: process_creation
+detection:
+  selection_killall:
+    Image|endswith: '/killall'
+    CommandLine|contains:
+      - 'mongod'
+      - 'redis-server'
+      - 'mysqld'
+      - 'postgres'
+      - 'postmaster'
+      - 'oracle'
+  selection_selfdelete:
+    Image|endswith:
+      - '/sh'
+      - '/bash'
+    CommandLine|contains|all:
+      - 'sleep 2'
+      - 'rm -f'
+  condition: selection_killall or selection_selfdelete
+falsepositives:
+  - Legitimate database maintenance scripts using killall
+  - Administrative shell commands that remove a file after a short delay
+level: high

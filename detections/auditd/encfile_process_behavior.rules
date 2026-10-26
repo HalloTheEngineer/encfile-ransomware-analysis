@@ -1,0 +1,11 @@
+## encfile run-state watches
+## Install as /etc/audit/rules.d/encfile.rules and review before loading.
+
+-w /var/tmp/.X11-lock-session -p wa -k encfile_marker
+-w /var/tmp/.X11-lock-session.run -p wa -k encfile_lock
+
+## killall execve events.
+## Verify the executable path on your distribution. If your auditd does not
+## support -F exe=, remove this rule and use the Sigma process-creation rule
+## or an equivalent EDR/SIEM query instead.
+-a always,exit -F arch=b64 -S execve -F exe=/usr/bin/killall -k encfile_killall
